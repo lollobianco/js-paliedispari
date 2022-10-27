@@ -39,27 +39,7 @@ function randomNumber(){
    return randomNumber;
 }
 
-function even(){
-
-   let number = parseInt(prompt('Inserisci un numero da 1 a 5'));
-
-   if (number <= 5){
-
-      result = number + randomNumber();
-
-      console.log(result);
-
-      return result;
-
-   }  else {
-
-         alert("INSERISCI UN NUMERO COMPRESO TRA 1 E 5");
-
-   }
-
-}
-
-function odd(){
+function evenOdd(){
 
    let number = parseInt(prompt('Inserisci un numero da 1 a 5'));
 
@@ -81,7 +61,7 @@ function odd(){
 
 if (evenOrOdd == 'pari' || 'Pari'){
 
-   if (even() % 2 == 0){
+   if (evenOdd() % 2 == 0){
 
       alert('Hai Vinto!!!');
 
@@ -93,7 +73,7 @@ if (evenOrOdd == 'pari' || 'Pari'){
 
 }  else{
 
-      if (odd() % 2 != 0){
+      if (evenOdd() % 2 != 0){
 
          alert('Hai Vinto!!!');
    
