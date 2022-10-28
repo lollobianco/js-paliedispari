@@ -1,61 +1,72 @@
-// let word = prompt('inserisci una parola per scoprire se è palindroma oppure no: ');
+let word = prompt('inserisci una parola per scoprire se è palindroma oppure no: ');
 
 
-// function palindroma(){
+function palindroma(){
 
-//    let reversedWord = '';
+   let reversedWord = '';
 
-//    for (let i = word.length-1; i >= 0; i--){
+   for (let i = word.length-1; i >= 0; i--){
 
-//       reversedWord = reversedWord += word[i];
+      reversedWord = reversedWord += word[i];
 
-//    }
+   }
 
-//    return reversedWord;
+   return reversedWord;
 
-// }
+}
 
-// const reversedWord = palindroma();
+const reversedWord = palindroma();
 
-// console.log(`La parola "${word}" al contrario e: ${reversedWord}`);
+console.log(`La parola "${word}" al contrario e: ${reversedWord}`);
 
-// if (reversedWord == word){
+if (reversedWord == word){
 
-//    alert(`La parola "${word}" è palindroma: ${word} --> ${reversedWord}`);
+   alert(`La parola "${word}" è palindroma: ${word} --> ${reversedWord}`);
    
-// }  else{
+}  else{
 
-//       alert(`La parola "${word}" non è palindroma: ${word} --> ${reversedWord}`);
+      alert(`La parola "${word}" non è palindroma: ${word} --> ${reversedWord}`);
 
-// }
+}
+
+console.log(`-------------------------------------------`)
 
 // ----------------------------------------------------------------------------
 
 const evenOrOdd = prompt('Pari o Dispari?');
-console.log(evenOrOdd);
+console.log(`hai scelto: ${evenOrOdd}`);
+
 const number = parseInt(prompt('Inserisci un numero da 1 a 5'));
 console.log(`numero scelto: ${number}`);
+
 const ranNumber = randomNumber(5, 1);
 console.log(`numero bot: ${ranNumber}`);
-const sumNumber = evenOdd();
-console.log(`somma numeri: ${sumNumber}`);
+
+const sumNumber = result();
+console.log(`${number} + ${ranNumber} = ${sumNumber}`);
+
+
+
+//funzione per generare il numero casuale del bot:
 
 function randomNumber(max, min){
 
    const randomNumber = Math.floor(Math.random() * max) + min;
    return randomNumber;
-   
+
 }
 
-function evenOdd(){
+
+
+//funzione per calcolare la somma dei due numeri:
+
+function result(){
 
    if (number <= 5){
 
       const result = (number + ranNumber);
 
       return result;
-
-      console.log(`${number} + ${ranNumber} = ${result}`);
 
    }  else {
           
@@ -66,32 +77,39 @@ function evenOdd(){
 }
 
 
-if (evenOrOdd === 'pari' || 'Pari'){
+
+// funzione di controllo per vedere se la somma è pari o dispari:
+
+function evenOdd(){
+
+   let check = ''; 
 
    if (sumNumber % 2 == 0){
 
-      alert(`Il bot ha scelto ${ranNumber}, te hai scelto ${number}: Hai Vinto!!!`)
+      check = 'pari';
+      return check;
 
    }  else{
 
-         alert(`Il bot ha scelto ${ranNumber}, te hai scelto ${number}: Hai Perso!!!`)
+         check = 'dispari';
+         return check;
 
       }
 
-}  else if (evenOrOdd === 'dispari' || 'Dispari'){
+}
 
-      if (sumNumber % 2 != 0){
 
-         alert(`Il bot ha scelto ${ranNumber}, te hai scelto ${number}: Hai Vinto!!!`)
-      
-      }  else{
-               
-            alert(`Il bot ha scelto ${ranNumber}, te hai scelto ${number}: Hai Perso!!!`)
-      
-          }
 
-   } else{
+//controllo finale per dichiarare il vincitore:
 
-         alert('INSERISCI PARI O DISPARI!!!');
+if (evenOrOdd == evenOdd() ){
 
-      }
+   console.log (`l'utente ha vinto`)
+   alert('Hai vinto!!');
+
+}  else {
+
+      console.log (`l'utente ha perso`)
+      alert('Hai perso!!');
+
+   } 
