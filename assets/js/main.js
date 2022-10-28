@@ -41,9 +41,10 @@ const sumNumber = evenOdd();
 console.log(`somma numeri: ${sumNumber}`);
 
 function randomNumber(max, min){
+
    const randomNumber = Math.floor(Math.random() * max) + min;
-   console.log (`numero bot: ${randomNumber}`);
    return randomNumber;
+   
 }
 
 function evenOdd(){
