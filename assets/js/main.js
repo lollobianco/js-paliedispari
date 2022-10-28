@@ -1,86 +1,96 @@
-let word = prompt('inserisci una parola per scoprire se è palindroma oppure no: ');
+// let word = prompt('inserisci una parola per scoprire se è palindroma oppure no: ');
 
 
-function palindroma(){
+// function palindroma(){
 
-   let reversedWord = '';
+//    let reversedWord = '';
 
-   for (let i = word.length-1; i >= 0; i--){
+//    for (let i = word.length-1; i >= 0; i--){
 
-      reversedWord = reversedWord += word[i];
+//       reversedWord = reversedWord += word[i];
 
-   }
+//    }
 
-   return reversedWord;
+//    return reversedWord;
 
-}
+// }
 
-const reversedWord = palindroma();
+// const reversedWord = palindroma();
 
-console.log(`La parola "${word}" al contrario e: ${reversedWord}`);
+// console.log(`La parola "${word}" al contrario e: ${reversedWord}`);
 
-if (reversedWord == word){
+// if (reversedWord == word){
 
-   alert(`La parola "${word}" è palindroma: ${word} --> ${reversedWord}`);
+//    alert(`La parola "${word}" è palindroma: ${word} --> ${reversedWord}`);
    
-}  else{
+// }  else{
 
-      alert(`La parola "${word}" non è palindroma: ${word} --> ${reversedWord}`);
+//       alert(`La parola "${word}" non è palindroma: ${word} --> ${reversedWord}`);
 
-}
+// }
 
 // ----------------------------------------------------------------------------
 
-let evenOrOdd = prompt('Pari o dispari?');
+const evenOrOdd = prompt('Pari o Dispari?');
 console.log(evenOrOdd);
+const number = parseInt(prompt('Inserisci un numero da 1 a 5'));
+console.log(`numero scelto: ${number}`);
+const ranNumber = randomNumber(5, 1);
+console.log(`numero bot: ${ranNumber}`);
+const sumNumber = evenOdd();
+console.log(`somma numeri: ${sumNumber}`);
 
-function randomNumber(){
-   let randomNumber = Math.round(Math.random() * 1) + 4;
+function randomNumber(max, min){
+   const randomNumber = Math.floor(Math.random() * max) + min;
+   console.log (`numero bot: ${randomNumber}`);
    return randomNumber;
 }
 
 function evenOdd(){
 
-   let number = parseInt(prompt('Inserisci un numero da 1 a 5'));
-
    if (number <= 5){
 
-      result = number + randomNumber();
-
-      console.log(result);
+      const result = (number + ranNumber);
 
       return result;
 
-   }  else {
+      console.log(`${number} + ${ranNumber} = ${result}`);
 
+   }  else {
+          
          alert("INSERISCI UN NUMERO COMPRESO TRA 1 E 5");
 
    }
 
 }
 
-if (evenOrOdd == 'pari' || 'Pari'){
 
-   if (evenOdd() % 2 == 0){
+if (evenOrOdd === 'pari' || 'Pari'){
 
-      alert('Hai Vinto!!!');
+   if (sumNumber % 2 == 0){
+
+      alert(`Il bot ha scelto ${ranNumber}, te hai scelto ${number}: Hai Vinto!!!`)
 
    }  else{
 
-         alert('Hai Perso!!!');
+         alert(`Il bot ha scelto ${ranNumber}, te hai scelto ${number}: Hai Perso!!!`)
 
       }
 
-}  else{
+}  else if (evenOrOdd === 'dispari' || 'Dispari'){
 
-      if (evenOdd() % 2 != 0){
+      if (sumNumber % 2 != 0){
 
-         alert('Hai Vinto!!!');
-   
+         alert(`Il bot ha scelto ${ranNumber}, te hai scelto ${number}: Hai Vinto!!!`)
+      
       }  else{
-   
-            alert('Hai Perso!!!');
-   
-         }
+               
+            alert(`Il bot ha scelto ${ranNumber}, te hai scelto ${number}: Hai Perso!!!`)
+      
+          }
 
-   }
+   } else{
+
+         alert('INSERISCI PARI O DISPARI!!!');
+
+      }
